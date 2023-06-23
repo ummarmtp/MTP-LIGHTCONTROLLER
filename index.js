@@ -39,7 +39,7 @@ app.get("/data",function(req,res){
    //lastseen[parseInt(req.query.id)]=new Date();
     
     res.send(led[parseInt(req.query.id)]);
-    console.log(Serverdata);
+   // console.log(Serverdata);
 });
 
 setInterval(updateLed, 1000);
@@ -139,7 +139,7 @@ function updateLed()
     
  
    }
-   console.log(led);
+   //console.log(led);
 }
 
 
