@@ -98,7 +98,7 @@ function updateLed()
 
         if(ehours==time.getHours())// || ehours==time.getHours())
         {
-           if(emins>time.getMinutes()() && shours!=ehours)/// || emins>time.getMinutes() ) 
+           if(emins>time.getMinutes() && shours!=ehours)/// || emins>time.getMinutes() ) 
            {
             led[i]=true;
            }
