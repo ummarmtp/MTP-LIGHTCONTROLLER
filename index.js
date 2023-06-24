@@ -1,7 +1,8 @@
 var http=require('http');
 var express=require('express');
 
-
+process.env.TZ = 'Asia/Dubai' 
+'Asia/Dubai'
 var app=express();
 var server=http.createServer(app);
 var io=require('socket.io')(server);
@@ -57,7 +58,7 @@ var led = new Array(11).fill(false);
 function updateLed()
 {
     //lastseenupdate();
-    var time=new Date();
+    var time= new Date();
   for(var i=0; i<11;i++)
    {
     let [shours, smins] = Serverdata[i].starttime.split(":");
