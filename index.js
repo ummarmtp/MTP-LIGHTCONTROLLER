@@ -140,6 +140,7 @@ function updateLed()
  
    }
    console.log(led);
+   console.log(time);
 }
 
 
