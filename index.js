@@ -149,11 +149,31 @@ function updateLed()
 io.on('connection',function(socket){
     console.log('client connected.....');
     io.emit('data',Serverdata);
-    socket.on('datachange',function(data){
+    socket.on('datafullchange',function(data){
          
         console.log("data change in pos");
 
         Serverdata=data;
+        io.emit('data',Serverdata);
+       // console.log('Received message from client!',Serverdata);
+      // setInterval(updateLed(), 1000);
+
+      //updateLed();
+       // console.log(led);
+      // setInterval(updateLed, 1000);
+    
+       
+    });
+
+
+    socket.on('datachange',function(data1,data2,data3,pos){
+         
+        console.log("data change in pos");
+
+      Serverdata[pos].name=data1;
+      Serverdata[pos].starttime=data2;
+      Serverdata[pos].endtime=data3;
+
         io.emit('data',Serverdata);
        // console.log('Received message from client!',Serverdata);
       // setInterval(updateLed(), 1000);
