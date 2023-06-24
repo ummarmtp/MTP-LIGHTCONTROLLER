@@ -18,17 +18,17 @@ app.set('view engine','ejs');
 
 
 var Serverdata=[
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 1",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 2",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 3",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 4",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 5",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 6",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 7",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 8",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 9",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name 10",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"name11",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
 ];
 
 app.use(express.static(__dirname + '/public'));
