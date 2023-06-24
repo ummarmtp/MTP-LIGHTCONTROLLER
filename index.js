@@ -18,17 +18,17 @@ app.set('view engine','ejs');
 
 
 var Serverdata=[
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
-{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:Number,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
+{name:"ummar",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:String},
 ];
 
 app.use(express.static(__dirname + '/public'));
@@ -98,7 +98,7 @@ function updateLed()
 
         if(ehours==time.getHours())// || ehours==time.getHours())
         {
-           if(emins>time.getMinutes() && shours!=ehours)/// || emins>time.getMinutes() ) 
+           if(emins>time.getMinutes()() && shours!=ehours)/// || emins>time.getMinutes() ) 
            {
             led[i]=true;
            }
@@ -141,7 +141,8 @@ function updateLed()
  
    }
    console.log(led);
-   console.log(time);
+   console.log(time.getHours());
+   console.log(Serverdata[0].starttime)
 }
 
 
