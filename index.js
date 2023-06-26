@@ -227,34 +227,34 @@ function lastSeen(i,time)
 
         }
         else{
-            Serverdata[i].status= lastseen[i]//" Last Seen "+mins+" Mins ago"
+            Serverdata[i].status= " Last Seen "+mins+" Mins ago"
 
         }
 
       
     }
-    // else if(lastseen[i].getDay()==time.getDay())
-    // {
-    //     var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
-    //     if(hours<=23)
-    //     {
-    //         Serverdata[i].status= " Last Seen "+hours+" hours ago"
+    else if(lastseen[i].getDay()==time.getDay())
+    {
+        var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
+        if(hours<=23)
+        {
+            Serverdata[i].status= " Last Seen "+hours+" hours ago"
 
-    //     }
+        }
         
 
-    // }
-    // else
-    // {
-    //     var days=parseInt(time.getDay())-parseInt(lastseen[i].getDay());
-    //     if(days<=6)
-    //     {
-    //         d[7]={SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
-    //         Serverdata[i].status= " Last Seen "+d[days]+"ago";
+    }
+    else
+    {
+        var days=parseInt(time.getDay())-parseInt(lastseen[i].getDay());
+        if(days<=6)
+        {
+            d[7]={SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+            Serverdata[i].status= " Last Seen "+d[days]+"ago";
 
-    //     }
+        }
 
-    // }
+    }
 
 }
 
