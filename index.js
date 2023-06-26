@@ -1,5 +1,6 @@
 var http=require('http');
 var express=require('express');
+const { time } = require('console');
 
 process.env.TZ = 'Asia/Dubai' 
 'Asia/Dubai'
@@ -15,20 +16,21 @@ app.set('view engine','ejs');
 //     batteyVoltage:10,
 //     status: "OFFLINE",  
 // });
+var lastseen=new Array(11).fill(new Date());
 
 
 var Serverdata=[
-{name:"name 1",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 2",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 3",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 4",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 5",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 6",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 7",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 8",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 9",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name 10",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
-{name:"name11",starttime:"09:06",endtime:"10:00",batteryVoltage:0.0,status:String},
+{name:"name-1",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-2",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-3",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-4",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-5",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-6",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-7",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-8",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-9",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-10",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
+{name:"name-11",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
 ];
 
 app.use(express.static(__dirname + '/public'));
@@ -37,7 +39,7 @@ app.get("/",function(req,res){res.render('index');});
 //FROM MICRO CONTROLLER
 app.get("/data",function(req,res){
     Serverdata[parseInt(req.query.id)].batteyVoltage=parseFloat(req.query.v);
-   //lastseen[parseInt(req.query.id)]=new Date();
+lastseen[parseInt(req.query.id)]=new Date();
     
     res.send(led[parseInt(req.query.id)]);
    // console.log(Serverdata);
@@ -45,7 +47,7 @@ app.get("/data",function(req,res){
 
 setInterval(updateLed, 1000);
 
-
+var refreshtime=new Date();
 
 
 
@@ -59,10 +61,12 @@ function updateLed()
 {
     //lastseenupdate();
     var time= new Date();
+    refreshtime=new Date();
   for(var i=0; i<11;i++)
    {
     let [shours, smins] = Serverdata[i].starttime.split(":");
     let [ehours, emins] = Serverdata[i].endtime.split(":");
+    lastSeen(i,time);
 
     shours=parseInt(shours,10) ;
     ehours=parseInt(ehours,10) ;
@@ -154,7 +158,7 @@ io.on('connection',function(socket){
         console.log("data change in pos");
 
         Serverdata=data;
-        io.emit('data',Serverdata);
+        io.emit('data',Serverdata,refreshtime);
        // console.log('Received message from client!',Serverdata);
       // setInterval(updateLed(), 1000);
 
@@ -170,11 +174,12 @@ io.on('connection',function(socket){
          
         console.log("data change in pos");
 
-      Serverdata[pos].name=data1;
-      Serverdata[pos].starttime=data2;
-      Serverdata[pos].endtime=data3;
+       // Serverdata=data;
+       Serverdata[pos].name=data1;
+       Serverdata[pos].starttime=data2;
+       Serverdata[pos].endtime=data3;
 
-        io.emit('data',Serverdata);
+        io.emit('data',Serverdata,refreshtime);
        // console.log('Received message from client!',Serverdata);
       // setInterval(updateLed(), 1000);
 
@@ -209,7 +214,49 @@ io.on('connection',function(socket){
 //     }
     
 // }
+//last seen update
+function lastSeen(i,time)
+{
+    
+   if(lastseen[i].getDay()==time.getDay() && lastseen[i].getHours()==time.getHours())
+    {
+        var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
+        if(mins<3)
+        {
+            Serverdata[i].status= "Online"
 
+        }
+        else{
+            Serverdata[i].status= " Last Seen "+mins+" Mins ago"
+
+        }
+
+      
+    }
+    else if(lastseen[i].getDay()==time.getDay())
+    {
+        var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
+        if(mins<=23)
+        {
+            Serverdata[i].status= " Last Seen "+hours+" hours ago"
+
+        }
+        
+
+    }
+    else
+    {
+        var days=parseInt(time.getDay())-parseInt(lastseen[i].getDay());
+        if(days<=6)
+        {
+            d[7]={SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+            Serverdata[i].status= " Last Seen "+d[days]+"ago";
+
+        }
+
+    }
+
+}
 
 
 

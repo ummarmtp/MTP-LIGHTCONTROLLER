@@ -36,9 +36,9 @@
 
     </header>
     <div class="body">
-    <div class="content" style="color:black; text-align: center; text-align: center;margin: 50px; ">
+    <div class="content" style="color:black; text-align: center; text-align: center;margin: 100px; ">
         <h1>Time Setting</h1>
-        <div  style="text-align: justify; ">
+        <div  style="text-align: justify; ">Last page load:<span class id="load"></span>
 
 
             <div class="row " style=" height: 60px; background-color:#cfe2ff;margin-top: 4px;  ">
@@ -47,108 +47,108 @@
                 <span class="h4 col-lg-2 col-md-2 " > End Time </span>
                 <span class="h4 col-lg-2 col-md-2 " > Battery Voltage </span>
                 <span class="h4 col-lg-2 col-md-2 ">Status </span>
-                <span class="h4 col-lg-2 col-md-2"><button class="btn btn-primary" name="submit" id="sub" >Send To all Device </button></span>
+                <span class="h4 col-lg-2 col-md-2"><button class="btn btn-primary" name="submit" id="sub" >Send To All Device </button></span>
             </div>
 
 
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"> 1-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" > </span>
+                <span class="h4 col-lg-2 col-md-2"> 1-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
+                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 " ><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub0" > Send To Device</button> </span>
+            </div>
+            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                <span class="h4 col-lg-2 col-md-2">   2-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" > </span>
+                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
+                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary " name="submit" id="sub1"> Send To Device</button> </span>
+            </div>
+            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                <span class="h4 col-lg-2 col-md-2"> 3-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
                 <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub0" >Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
-
-                <span class="h4 col-lg-2 col-md-2"> 2-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" > </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary " name="submit" id="sub1">Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
-
-                <span class="h4 col-lg-2 col-md-2">3-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub2">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub2"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
                 <span class="h4 col-lg-2 col-md-2 ">4-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub3">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub3"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">5-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2">  5-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub4">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub4"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">6-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 6-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
                 <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub5">Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">7-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 7-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub6">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub6"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">8-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 8-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub7">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status" style="background-color:#cfe2ff;" ></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub7"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">9-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 9-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub8">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub8"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">10-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 10-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit"id="sub9">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit"id="sub9"> Send To Device</button> </span>
             </div>
             <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2">11-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
+                <span class="h4 col-lg-2 col-md-2"> 11-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
                 <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
                 <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" readonly name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub10">Send To Device</button> </span>
+                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
+                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
+                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub10"> Send To Device</button> </span>
             </div>
           
         </div>
@@ -213,9 +213,8 @@
     starttime: "00:00:00",
     endtime:"00:00:00",
     batteyVoltage:0,
-    status: String,  
+    status: "Offline",  
 });
-
 var s=document.getElementById('sub');
 s.onclick=function(e){
     for(var i=0;i<11;i++)
@@ -230,10 +229,9 @@ s.onclick=function(e){
    socket.emit('datafullchange',Clientdata);
 }
 
-
 var s0=document.getElementById('sub0');
 s0.onclick=function(e){
-    Clientdata[0].name=document.getElementsByClassName('name')[0].value;
+   Clientdata[0].name=document.getElementsByClassName('name')[0].value;
    Clientdata[0].starttime=document.getElementsByClassName('start')[0].value;
    Clientdata[0].endtime=document.getElementsByClassName('end')[0].value;
    socket.emit('datachange',Clientdata[0].name,Clientdata[0].starttime,Clientdata[0].endtime,0);
@@ -319,6 +317,7 @@ s9.onclick=function(e){
    socket.emit('datachange',Clientdata[9].name,Clientdata[9].starttime,Clientdata[9].endtime,9);
 }
 
+
 var s10=document.getElementById('sub10');
 s10.onclick=function(e){
     Clientdata[10].name=document.getElementsByClassName('name')[10].value;
@@ -326,6 +325,8 @@ s10.onclick=function(e){
    Clientdata[10].endtime=document.getElementsByClassName('end')[10].value;
    socket.emit('datachange',Clientdata[10].name,Clientdata[10].starttime,Clientdata[10].endtime,10);
 }
+
+
 
 
 
@@ -339,10 +340,11 @@ s10.onclick=function(e){
 
 }  
      
-socket.on('data', function(msg){
+socket.on('data', function(msg,msg1){
   for(var i=0; i<11; i++)
   {
     Clientdata[i]=msg[i];
+    document.getElementById('load').innerHTML=document.lastModified;
     // Clientdata[i].starttime=msg[i].starttime;
     // Clientdata[i].endtime=msg[i].endtime;
     // Clientdata[i].status=msg[i].status;
@@ -361,6 +363,7 @@ function updateScreen()
         document.getElementsByClassName("end")[i].value=Clientdata[i].endtime;
         document.getElementsByClassName("volts")[i].value=Clientdata[i].batteyVoltage;
         document.getElementsByClassName("status")[i].value=Clientdata[i].status;
+
         
        
     }
