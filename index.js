@@ -144,9 +144,9 @@ function updateLed()
     
  
    }
-   console.log(led);
-   console.log(time.getHours());
-   console.log(Serverdata[0].starttime)
+  // console.log(led);
+  // console.log(time.getHours());
+   //console.log(Serverdata[0].starttime)
 }
 
 
