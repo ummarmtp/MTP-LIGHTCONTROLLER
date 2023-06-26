@@ -236,7 +236,7 @@ function lastSeen(i,time)
     else if(lastseen[i].getDay()==time.getDay())
     {
         var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
-        if(mins<=23)
+        if(hours<=23)
         {
             Serverdata[i].status= " Last Seen "+hours+" hours ago"
 
