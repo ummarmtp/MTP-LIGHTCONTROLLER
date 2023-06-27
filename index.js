@@ -257,7 +257,7 @@ function lastSeen(i,time)
 //     }
 
 var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
-         if(Math.abs(mins)<3 && m[i]==false)
+         if(Math.abs(mins)<1 && m[i]==false)
          {
             Serverdata[i].status= "Online"
 
@@ -293,5 +293,5 @@ function strLen(data)
     }
 
 }
-
+console.log(server.port);
 server.listen(3000);
