@@ -276,7 +276,7 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
             
 
 
-             Serverdata[i].status=hour+":"+min+" "+day+"/"+month+"/"+year;
+             Serverdata[i].status=hour+":"+min+"  "+day+"/"+month+"/"+year;
              m[i]=true;
 
          }
@@ -287,7 +287,7 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
 
 function strLen(data)
 {
-    if(data.length==1)
+    if(data.length==2)
     {
         data="0"+data;
     }
