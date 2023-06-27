@@ -257,13 +257,13 @@ function lastSeen(i,time)
 //     }
 
 var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
-         if(Math.abs(mins)<3 && m==false)
+         if(Math.abs(mins)<1 && m==false)
          {
             Serverdata[i].status= "Online"
 
         }
          else{
-             Serverdata[i].status="Lastseen "+lastseen[i].getday()+" / "+lastseen[i].getMonth()+ " / "+lastseen[i].getYear()+ "   "+lastseen[i].getHours()+" : "+lastseen[i].getMinutes();
+             Serverdata[i].status="Lastseen "+lastseen[i].getDate()+" / "+lastseen[i].getMonth()+ " / "+lastseen[i].getYear()+ "   "+lastseen[i].getHours()+" : "+lastseen[i].getMinutes();
              m=true;
 
          }
