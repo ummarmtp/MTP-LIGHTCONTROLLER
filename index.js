@@ -263,7 +263,7 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
 
         }
          else{
-             Serverdata[i].status="Lastseen "+lastseen[i].getDate()+" / "+lastseen[i].getMonth()+ " / "+lastseen[i].getYear()+ "   "+lastseen[i].getHours()+" : "+lastseen[i].getMinutes();
+             Serverdata[i].status="Lastseen "+lastseen[i].getDate()+"/"+lastseen[i].getMonth()+ "/"+lastseen[i].getYear()+ " "+lastseen[i].getHours()+":"+lastseen[i].getMinutes();
              m=true;
 
          }
