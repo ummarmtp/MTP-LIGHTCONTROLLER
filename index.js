@@ -17,7 +17,7 @@ app.set('view engine','ejs');
 //     status: "OFFLINE",  
 // });
 var lastseen=new Array(11).fill(new Date());
-
+var m=false;
 
 var Serverdata=[
 {name:"name-1",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
@@ -40,7 +40,7 @@ app.get("/",function(req,res){res.render('index');});
 app.get("/data",function(req,res){
     Serverdata[parseInt(req.query.id)].batteyVoltage=parseFloat(req.query.v);
 lastseen[parseInt(req.query.id)]=new Date();
-    
+    m=false;
     res.send(led[parseInt(req.query.id)]);
    // console.log(Serverdata);
 });
@@ -218,43 +218,57 @@ io.on('connection',function(socket){
 function lastSeen(i,time)
 {
     
-   if(lastseen[i].getDay()==time.getDay() && lastseen[i].getHours()==time.getHours())
-    {
-        var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
-        if(mins<3)
-        {
+//    if(lastseen[i].getDay()==time.getDay() && lastseen[i].getHours()==time.getHours())
+//     {
+//         var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
+//         if(mins<3)
+//         {
+//             Serverdata[i].status= "Online"
+
+//         }
+//         else{
+//             Serverdata[i].status= " Last Seen "+mins+" Mins ago"
+
+//         }
+
+      
+//     }
+//     else if(lastseen[i].getDay()==time.getDay())
+//     {
+//         var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
+//         if(hours<=23)
+//         {
+//             Serverdata[i].status= " Last Seen "+hours+" hours ago"
+
+//         }
+        
+
+//     }
+//     else
+//     {
+//         var days=parseInt(time.getDay())-parseInt(lastseen[i].getDay());
+//         if(days<=6)
+//         {
+//             d[7]={SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+//             Serverdata[i].status= " Last Seen "+d[days]+"ago";
+
+//         }
+
+//     }
+
+var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
+         if(Math.abs(mins)<3 && m==false)
+         {
             Serverdata[i].status= "Online"
 
         }
-        else{
-            Serverdata[i].status= " Last Seen "+mins+" Mins ago"
+         else{
+             Serverdata[i].status="Lastseen "+lastseen[i].getdate()+" / "+lastseen[i].getMonth()+ " / "+lastseen[i].getYear()+ "   "+lastseen[i].getHours()+" : "+lastseen[i].getMinutes();
+             m=true;
 
-        }
+         }
 
-      
-    }
-    else if(lastseen[i].getDay()==time.getDay())
-    {
-        var hours=parseInt(time.getHours())-parseInt(lastseen[i].getHours());
-        if(hours<=23)
-        {
-            Serverdata[i].status= " Last Seen "+hours+" hours ago"
 
-        }
-        
-
-    }
-    else
-    {
-        var days=parseInt(time.getDay())-parseInt(lastseen[i].getDay());
-        if(days<=6)
-        {
-            d[7]={SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
-            Serverdata[i].status= " Last Seen "+d[days]+"ago";
-
-        }
-
-    }
 
 }
 
