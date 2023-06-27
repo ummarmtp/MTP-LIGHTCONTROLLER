@@ -263,7 +263,20 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
 
         }
          else{
-             Serverdata[i].status="Lastseen "+lastseen[i].getDate()+"/"+lastseen[i].getMonth()+ "/"+lastseen[i].getYear()+ " "+lastseen[i].getHours()+":"+lastseen[i].getMinutes();
+            var day=lastseen[i].getDate();
+            var month=lastseen[i].getMonth();
+            var year=lastseen[i].getFullYear();
+            var hour=lastseen[i].getHours();
+            var min=lastseen[i].getMinutes();
+
+            strLen(day);
+            strLen(month);
+            strLen(min);
+            strLen(hour);
+            
+
+
+             Serverdata[i].status=+day+"/"+month+ "/"+year+ " "+hour+":"+min;
              m=true;
 
          }
@@ -272,6 +285,13 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
 
 }
 
+function strLen(data)
+{
+    if(data.length==1)
+    {
+        data="0"+data;
+    }
 
+}
 
 server.listen(3000);
