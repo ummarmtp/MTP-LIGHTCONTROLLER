@@ -17,7 +17,7 @@ app.set('view engine','ejs');
 //     status: "OFFLINE",  
 // });
 var lastseen=new Array(11).fill(new Date());
-var m=false;
+var m=new Array(11).fill(false);
 
 var Serverdata=[
 {name:"name-1",starttime:"09:06",endtime:"10:00",batteryVoltage:0,status:""},
@@ -40,7 +40,7 @@ app.get("/",function(req,res){res.render('index');});
 app.get("/data",function(req,res){
     Serverdata[parseInt(req.query.id)].batteyVoltage=parseFloat(req.query.v);
 lastseen[parseInt(req.query.id)]=new Date();
-    m=false;
+    m[parseInt(req.query.id)]=false;
     res.send(led[parseInt(req.query.id)]);
    // console.log(Serverdata);
 });
@@ -257,7 +257,7 @@ function lastSeen(i,time)
 //     }
 
 var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
-         if(Math.abs(mins)<1 && m==false)
+         if(Math.abs(mins)<3 && m[i]==false)
          {
             Serverdata[i].status= "Online"
 
@@ -277,7 +277,7 @@ var mins=parseInt(time.getMinutes())-parseInt(lastseen[i].getMinutes());
 
 
              Serverdata[i].status=+day+"/"+month+ "/"+year+ " "+hour+":"+min;
-             m=true;
+             m[i]=true;
 
          }
 
