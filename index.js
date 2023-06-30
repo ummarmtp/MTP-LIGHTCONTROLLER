@@ -78,7 +78,7 @@ function updateLed()
     //console.log(time);
     //console.log("   ...............");
 
-    if(shours<=time.getHours() && ehours>=time.getHours())
+    if(shours<=time.getHours() && ehours>=time.getHours() && shours<ehours)
     {
         //start time
        if(shours==time.getHours())// || ehours==time.getHours())
@@ -135,6 +135,59 @@ function updateLed()
 
 
 
+    }
+    else if(ehours<=time.getHours() && shours>=time.getHours() && ehours<shours)
+    {   ///
+        if(ehours==time.getHours())// || ehours==time.getHours())
+        {
+           if(emins>time.getMinutes() && shours!=ehours)/// || emins>time.getMinutes() ) 
+           {
+            led[i]=true;
+           }
+           else if(emins>time.getMinutes() && shours==ehours && smins<emins)
+           {
+            led[i]=true;
+
+           }
+           else if(shours==ehours && smins>emins)
+           {
+            
+            led[i]=true;
+            if(emins<=time.getMinutes() && smins>time.getMinutes())
+            {
+                led[i]=false;
+            }
+
+           }
+           
+           
+           else
+           {
+            led[i]=false;
+
+           }
+        }
+
+        if(shours==time.getHours())// || ehours==time.getHours())
+        {
+           if(smins<=time.getMinutes())/// || emins>time.getMinutes() ) 
+           {
+            led[i]=true;
+           }
+           else
+           {
+            led[i]=false;
+
+           }
+        }
+       
+        else
+        {
+            led[i]=true;
+        }
+        //end time
+
+       ///
     }
 
     else
