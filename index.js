@@ -142,11 +142,11 @@ function updateLed()
         {
            if(emins>time.getMinutes() && shours!=ehours)/// || emins>time.getMinutes() ) 
            {
-            led[i]=true;
+            led[i]=false;
            }
            else if(emins>time.getMinutes() && shours==ehours && smins<emins)
            {
-            led[i]=true;
+            led[i]=false;
 
            }
            else if(shours==ehours && smins>emins)
@@ -155,7 +155,7 @@ function updateLed()
             led[i]=true;
             if(emins<=time.getMinutes() && smins>time.getMinutes())
             {
-                led[i]=false;
+                led[i]=true;
             }
 
            }
@@ -163,7 +163,7 @@ function updateLed()
            
            else
            {
-            led[i]=false;
+            led[i]=true;
 
            }
         }
@@ -172,18 +172,18 @@ function updateLed()
         {
            if(smins<=time.getMinutes())/// || emins>time.getMinutes() ) 
            {
-            led[i]=true;
+            led[i]=false;
            }
            else
            {
-            led[i]=false;
+            led[i]=true;
 
            }
         }
        
         else
         {
-            led[i]=true;
+            led[i]=false;
         }
         //end time
 
