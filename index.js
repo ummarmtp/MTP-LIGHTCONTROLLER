@@ -138,10 +138,10 @@ function updateLed() {
                 }
             }
 
-            // else {
-            //     led[i] = true;
-            // }
-             //end time
+            else {
+                led[i] = true;
+            }
+            // end time
 
              if (ehours == time.getHours())// || ehours==time.getHours())
              {
@@ -163,10 +163,10 @@ function updateLed() {
                  }
  
  
-                //  else {
-                //      led[i] = false;
+                 else {
+                     led[i] = false;
  
-                //  }
+                 }
              }
 
 
