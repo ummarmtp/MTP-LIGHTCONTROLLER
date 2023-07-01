@@ -152,7 +152,7 @@ function updateLed()
            else if(shours==ehours && smins>emins)
            {
             
-            led[i]=true;
+            led[i]=false;
             if(emins<=time.getMinutes() && smins>time.getMinutes())
             {
                 led[i]=true;
@@ -167,6 +167,10 @@ function updateLed()
 
            }
         }
+        else{
+            led[i]=true;
+        }
+       
 
         if(shours==time.getHours())// || ehours==time.getHours())
         {
@@ -181,10 +185,10 @@ function updateLed()
            }
         }
        
-        else
-        {
-            led[i]=false;
-        }
+        // else
+        // {
+        //     led[i]=false;
+        // }
         //end time
 
        ///
