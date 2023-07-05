@@ -21,12 +21,12 @@ header{
 h2{
     padding-bottom: 8px;
 }
-.mtp-logo
+.logo
 {
     height: 60px;
-    width: 60px;
+    width: 80px;
   
-   background-image: url("/image/mtp-logo.jpg");
+   /* background-image: url("/image/mtp-logo.jpg"); */
 
 } 
 body{
