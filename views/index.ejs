@@ -27,7 +27,7 @@
 
             
             <p class="header-text h4" style="display: inline-block;">
-                MTP Light Controller Management System
+               Smart Light Controller Management System
 
             </p>
 
@@ -215,6 +215,9 @@
     batteyVoltage:0,
     status: "Offline",  
 });
+
+var Clientled = new Array(11).fill(false);
+
 var s=document.getElementById('sub');
 s.onclick=function(e){
     for(var i=0;i<11;i++)
@@ -345,6 +348,7 @@ socket.on('data', function(msg,msg1){
   {
     Clientdata[i]=msg[i];
     document.getElementById('load').innerHTML=document.lastModified;
+    Clientled[i]=msg1[i];
     // Clientdata[i].starttime=msg[i].starttime;
     // Clientdata[i].endtime=msg[i].endtime;
     // Clientdata[i].status=msg[i].status;
@@ -363,11 +367,12 @@ function updateScreen()
         document.getElementsByClassName("end")[i].value=Clientdata[i].endtime;
         document.getElementsByClassName("volts")[i].value=Clientdata[i].batteyVoltage;
         document.getElementsByClassName("status")[i].value=Clientdata[i].status;
-        if(Clientdata[i].status=="Online")
+        if(Clientled[i]==true)
         {
-            document.getElementsByClassName("dot")[i].style.background = "green";
+            document.getElementsByClassName("dot")[i].style.background = "rgb(102, 252, 3)";
         }
-        else{
+        else if(Clientled[i]==false)
+        {
             document.getElementsByClassName("dot")[i].style.background = "white";
 
         }
