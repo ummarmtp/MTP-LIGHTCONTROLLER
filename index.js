@@ -75,7 +75,7 @@ function updateLed() {
         //console.log(ehours);
         //console.log(time);
         //console.log("   ...............");
-///first time condition
+        ///first time condition
         if (shours <= time.getHours() && ehours >= time.getHours() && shours < ehours) {
             //start time
             if (shours == time.getHours())// || ehours==time.getHours())
@@ -121,10 +121,10 @@ function updateLed() {
                 }
             }
         }
-        else if(shours < ehours) {
+        else if (shours < ehours) {
             led[i] = false;
         }
-///second time condtion
+        ///second time condtion
         if (shours >= time.getHours() && ehours <= time.getHours() && shours > ehours) {
             if (shours == time.getHours())// || ehours==time.getHours())
             {
@@ -143,38 +143,61 @@ function updateLed() {
             }
             // end time
 
-             if (ehours == time.getHours())// || ehours==time.getHours())
-             {
-                 if (emins > time.getMinutes() && shours != ehours)/// || emins>time.getMinutes() ) 
-                 {
-                     led[i] = true;
-                 }
-                 else if (emins > time.getMinutes() && shours == ehours && smins < emins) {
-                     led[i] = true;
- 
-                 }
-                 else if (shours == ehours && smins > emins) {
- 
-                     led[i] = true;
-                     if (emins <= time.getMinutes() && smins > time.getMinutes()) {
-                         led[i] = false;
-                     }
- 
-                 }
- 
- 
-                 else {
-                     led[i] = false;
- 
-                 }
-             }
+            if (ehours == time.getHours())// || ehours==time.getHours())
+            {
+                if (emins > time.getMinutes() && shours != ehours)/// || emins>time.getMinutes() ) 
+                {
+                    led[i] = true;
+                }
+                else if (emins > time.getMinutes() && shours == ehours && smins < emins) {
+                    led[i] = true;
+
+                }
+                else if (shours == ehours && smins > emins) {
+
+                    led[i] = true;
+                    if (emins <= time.getMinutes() && smins > time.getMinutes()) {
+                        led[i] = false;
+                    }
+
+                }
+
+
+                else {
+                    led[i] = false;
+
+                }
+            }
 
 
 
         }
-        else if(shours > ehours){
+        else if (shours > ehours) {
             led[i] = true;
         }
+
+        
+        //third condition 
+        //same start and end hours
+        if(shours==ehours && shours==time.getHours() )
+        {
+            if(smins<=time.getMinutes() && emins>time.getMinutes())
+            {
+                led[i] = true;
+            }
+            else if(emins<=time.getMinutes() || smins>time.getMinutes())
+            {
+                led[i] = false;
+
+            }
+
+        }
+        else if(shours==ehours)
+        {
+            led[i] = false;
+        }
+
+        
     }
     // console.log(led);
     // console.log(time.getHours());
