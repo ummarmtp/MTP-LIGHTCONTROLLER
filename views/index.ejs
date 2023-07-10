@@ -19,15 +19,15 @@
     <script type="text/javascript" src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <!-- code starting -->
-    <header class="container-fluid">
+    <header class="container-fluid hidden-xs hidden-sm">
         <div class="container pull-left" style="padding-top: 15px; padding-right: 10px; ">
 
             <!-- <img src="/image/mtp-logo.jpg" alt="mtp logo" class="logo img-rounded "></img> -->
-            <img src="/image/abu-dhabi-airports.jpg" alt="airport logo" class="logo img-rounded " ></img>
+            <img src="/image/abu-dhabi-airports.jpg" alt="airport logo" class="logo img-rounded "></img>
 
-            
+
             <p class="header-text h4" style="display: inline-block;">
-               Smart Light Controller Management System
+                Smart Light Controller Management System
 
             </p>
 
@@ -35,133 +35,691 @@
 
 
     </header>
-    <div class="body">
-    <div class="content" style="color:black; text-align: center; text-align: center;margin: 2%; ">
-        <h1>Time Setting</h1>
-        <div  style="text-align: justify; ">Last page load:<span  id="load"></span>
+    <div class="body hidden-xs hidden-sm">
+        <div class="content" style="color:black; text-align: center; text-align: center;margin: 2%; ">
+            <h1>Time Setting</h1>
+            <div style="text-align: justify; ">Last page load:<span id="load"></span>
 
 
-            <div class="row " style=" height: 60px; background-color:#cfe2ff;margin-top: 4px;  ">
-                <span class="h4 col-lg-2 col-md-2 "  >ID-Name  </span>
-                <span class="h4 col-lg-2 col-md-2 "> Start Time </span>
-                <span class="h4 col-lg-2 col-md-2 " > End Time </span>
-                <span class="h4 col-lg-2 col-md-2 " > Battery Voltage </span>
-                <span class="h4 col-lg-2 col-md-2 ">Last Seen </span>
-                <span class="h4 col-lg-2 col-md-2"><button class="btn btn-primary" name="submit" id="sub" >Send To All Device </button></span>
+                <div class="row " style=" height: 60px; background-color:#cfe2ff;margin-top: 4px;  ">
+                    <span class="h4 col-lg-2 col-md-2 ">ID-Name </span>
+                    <span class="h4 col-lg-2 col-md-2 "> Start Time </span>
+                    <span class="h4 col-lg-2 col-md-2 "> End Time </span>
+                    <span class="h4 col-lg-2 col-md-2 "> Battery Voltage </span>
+                    <span class="h4 col-lg-2 col-md-2 ">Last Seen </span>
+                    <span class="h4 col-lg-2 col-md-2"><button class="btn btn-primary" name="submit" id="sub">Send To
+                            All Device </button></span>
+                </div>
+
+
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 1-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub0"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 2-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary " name="submit" id="sub1"> Send
+                            To Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 3-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub2"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2 "><span class="dot"></span> 4-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub3"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 5-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub4"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 6-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub5">Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 7-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub6"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"> <span class="dot"></span> 8-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub7"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 9-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub8"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 10-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub9"> Send To
+                            Device</button> </span>
+                </div>
+                <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
+
+                    <span class="h4 col-lg-2 col-md-2"><span class="dot"></span> 11-<input
+                            style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name"
+                            class="name"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="start" class="start"></span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="time" name="end" class="end"> </span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts"
+                            style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                    <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"
+                            style="background-color:#cfe2ff;"></span>
+                    <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub10"> Send
+                            To Device</button> </span>
+                </div>
+
+            </div>
+            <div id="value">
+
             </div>
 
 
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 1-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub0" > Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 2-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" > </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary " name="submit" id="sub1"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 3-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub2"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2 "><span class="dot" ></span> 4-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub3"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 5-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >  </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub4"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 6-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub5">Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 7-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub6"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"> <span class="dot" ></span> 8-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status" style="background-color:#cfe2ff;" ></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub7"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
 
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 9-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub8"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
-
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 10-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number" name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit"id="sub9"> Send To Device</button> </span>
-            </div>
-            <div class="row " style="height: 60px; background-color:#cfe2ff; margin-top:4px;">
-
-                <span class="h4 col-lg-2 col-md-2"><span class="dot" ></span> 11-<input style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="name" class="name" >   </span>
-                <span class="pd col-lg-2 col-md-2 " ><input type="time" name="start" class="start" ></span>  
-                <span class="pd col-lg-2 col-md-2 "><input type="time" name="end"  class="end" > </span>
-                <span class="pd col-lg-2 col-md-2 "><input type="number"  name="volts" class="volts" style="background-color:#cfe2ff;font-size: 20px;" >V</span>
-                <span class="pd col-lg-2 col-md-2 "><input type="text" readonly name="status" class="status"  style="background-color:#cfe2ff;"></span>
-                <span class="pd col-lg-2 col-md-2 "><button class="btn btn-primary" name="submit" id="sub10"> Send To Device</button> </span>
-            </div>
-          
         </div>
-        <div id="value">
+
+
+    </div>
+
+    <div class="phone view hidden-lg hidden-ms">
+        <div class="container" style="background-color: rgb(46,112,116); height: 80px; color: white;">
+            <div class="container-fluid" style="padding-top: 10px;">
+                <img src="/image/abu-dhabi-airports.jpg" alt="airport logo" class="logo img-rounded "></img>
+                <span class="h4"> Smart Light Controller System</span>
+
+
+
+            </div>
+        </div>
+        <div class="bd">
+            <div style="position:sticky;">Last page load:<span id="phone-load"></span></div>
+
+            <!-- data 1 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">1-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub0"> Send
+                        To Device</button>
+                </div>
+                    
+                
+                
+
+
+
+            </div>
+
+
+            <!-- data2 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">2-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub1"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- data3 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">3-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub2"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- data4 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">3-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub3"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- data5 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">4-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub4"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+            <!-- data6 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">5-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub5"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+             <!-- data7 -->
+             <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">7-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub6"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+             <!-- data8 -->
+             <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">8-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub7"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+             <!-- data9 -->
+             <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">9-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub8"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+             <!-- data10 -->
+             <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">10-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub9"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- data11 -->
+            <div style="display: flex;flex-direction: column;background-color:#cfe2ff; margin-top: 20px;">
+                <div class="h4" style="display: flex;flex-direction: row; text-align: center;">
+                    <span class="phone-dot"></span>
+                    <Span style="padding: 4px;">11-Name : </Span><input
+                        style="background-color: #cfe2ff; text-transform: uppercase;" type="text" name="phone-name"
+                        class="phone-name">
+
+
+
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px;">
+                    <span>Start Time</span><span>End Time</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content: space-around;padding: 0px;margin: 0px; margin-bottom: 10px;">
+                    <input type="time" name="phone-start" class="phone-start">
+                    <input type="time" name="phone-end" class="phone-end">
+
+                </div>
+
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;margin-left:15px;">
+                    <span style="padding: 4px;">Battery Voltage : <input type="number" name="phone-volts"
+                            class="phone-volts" style="background-color:#cfe2ff;font-size: 20px;">V</span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:start;padding: 0px;margin: 0px;">
+                    <span style="padding: 4px;">Last Seen : <input type="text" readonly name="phone-status"
+                            class="phone-status" style="background-color:#cfe2ff;"></span>
+                </div>
+                <div class="h4"
+                    style="display: flex;flex-direction: row; text-align: center;justify-content:center;padding: 0px;margin: 0px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" name="submit" id="phone-sub10"> Send
+                        To Device</button>
+                </div>
+
+
+
+            </div>
+
+
         </div>
 
 
+    </div>
 
 
-
-
-
-        
 
 
 
@@ -205,187 +763,321 @@
             </footer>
         </div>
     </div> -->
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script type="text/javascript">
-  var socket=io();
-  var Clientdata=new Array(11).fill({ 
-    name: String,
-    starttime: "00:00:00",
-    endtime:"00:00:00",
-    batteyVoltage:0,
-    status: "Offline",  
-});
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script type="text/javascript">
+        var socket = io();
+        var Clientdata = new Array(11).fill({
+            name: String,
+            starttime: "00:00:00",
+            endtime: "00:00:00",
+            batteyVoltage: 0,
+            status: "Offline",
+        });
 
-var Clientled = new Array(11).fill(false);
+        var Clientled = new Array(11).fill(false);
 
-var s=document.getElementById('sub');
-s.onclick=function(e){
-    for(var i=0;i<11;i++)
-    {
-        Clientdata[i].name=document.getElementsByClassName('name')[i].value;
-        Clientdata[i].starttime=document.getElementsByClassName('start')[i].value;
-        Clientdata[i].endtime=document.getElementsByClassName('end')[i].value;
+        var s = document.getElementById('sub');
+        s.onclick = function (e) {
+            for (var i = 0; i < 11; i++) {
+                Clientdata[i].name = document.getElementsByClassName('name')[i].value;
 
-
-    }
-   
-   socket.emit('datafullchange',Clientdata);
-}
-
-var s0=document.getElementById('sub0');
-s0.onclick=function(e){
-   Clientdata[0].name=document.getElementsByClassName('name')[0].value;
-   Clientdata[0].starttime=document.getElementsByClassName('start')[0].value;
-   Clientdata[0].endtime=document.getElementsByClassName('end')[0].value;
-   socket.emit('datachange',Clientdata[0].name,Clientdata[0].starttime,Clientdata[0].endtime,0);
-}
-
-var s1=document.getElementById('sub1');
-s1.onclick=function(e){
-   
-   
-    Clientdata[1].name=document.getElementsByClassName('name')[1].value;
-   Clientdata[1].starttime=document.getElementsByClassName('start')[1].value;
-   Clientdata[1].endtime=document.getElementsByClassName('end')[1].value;
-   socket.emit('datachange',Clientdata[1].name,Clientdata[1].starttime,Clientdata[1].endtime,1);
-
-    
-   
-}
-
-var s2=document.getElementById('sub2');
-s2.onclick=function(e){
-    Clientdata[2].name=document.getElementsByClassName('name')[2].value;
-   Clientdata[2].starttime=document.getElementsByClassName('start')[2].value;
-   Clientdata[2].endtime=document.getElementsByClassName('end')[2].value;
-   socket.emit('datachange',Clientdata[2].name,Clientdata[2].starttime,Clientdata[2].endtime,2);
-}
-
-var s3=document.getElementById('sub3');
-s3.onclick=function(e){
-    Clientdata[3].name=document.getElementsByClassName('name')[3].value;
-   Clientdata[3].starttime=document.getElementsByClassName('start')[3].value;
-   Clientdata[3].endtime=document.getElementsByClassName('end')[3].value;
-   socket.emit('datachange',Clientdata[3].name,Clientdata[3].starttime,Clientdata[3].endtime,3);
-}
-
-var s4=document.getElementById('sub4');
-s4.onclick=function(e){
-    Clientdata[4].name=document.getElementsByClassName('name')[4].value;
-   Clientdata[4].starttime=document.getElementsByClassName('start')[4].value;
-   Clientdata[4].endtime=document.getElementsByClassName('end')[4].value;
-   socket.emit('datachange',Clientdata[4].name,Clientdata[4].starttime,Clientdata[4].endtime,4);
-}
+                Clientdata[i].starttime = document.getElementsByClassName('start')[i].value;
+                Clientdata[i].endtime = document.getElementsByClassName('end')[i].value;
 
 
-
-var s5=document.getElementById('sub5');
-s5.onclick=function(e){
-    Clientdata[5].name=document.getElementsByClassName('name')[5].value;
-   Clientdata[5].starttime=document.getElementsByClassName('start')[5].value;
-   Clientdata[5].endtime=document.getElementsByClassName('end')[5].value;
-   socket.emit('datachange',Clientdata[5].name,Clientdata[5].starttime,Clientdata[5].endtime,5);
-}
-
-
-var s6=document.getElementById('sub6');
-s6.onclick=function(e){
-    Clientdata[6].name=document.getElementsByClassName('name')[6].value;
-   Clientdata[6].starttime=document.getElementsByClassName('start')[6].value;
-   Clientdata[6].endtime=document.getElementsByClassName('end')[6].value;
-   socket.emit('datachange',Clientdata[6].name,Clientdata[6].starttime,Clientdata[6].endtime,6);
-}
-
-var s7=document.getElementById('sub7');
-s7.onclick=function(e){
-    Clientdata[7].name=document.getElementsByClassName('name')[7].value;
-   Clientdata[7].starttime=document.getElementsByClassName('start')[7].value;
-   Clientdata[7].endtime=document.getElementsByClassName('end')[7].value;
-   socket.emit('datachange',Clientdata[7].name,Clientdata[7].starttime,Clientdata[7].endtime,7);
-}
-
-var s8=document.getElementById('sub8');
-s8.onclick=function(e){
-    Clientdata[8].name=document.getElementsByClassName('name')[8].value;
-   Clientdata[8].starttime=document.getElementsByClassName('start')[8].value;
-   Clientdata[8].endtime=document.getElementsByClassName('end')[8].value;
-   socket.emit('datachange',Clientdata[8].name,Clientdata[8].starttime,Clientdata[8].endtime,8);
-}
-
-var s9=document.getElementById('sub9');
-s9.onclick=function(e){
-    Clientdata[9].name=document.getElementsByClassName('name')[9].value;
-   Clientdata[9].starttime=document.getElementsByClassName('start')[9].value;
-   Clientdata[9].endtime=document.getElementsByClassName('end')[9].value;
-   socket.emit('datachange',Clientdata[9].name,Clientdata[9].starttime,Clientdata[9].endtime,9);
-}
-
-
-var s10=document.getElementById('sub10');
-s10.onclick=function(e){
-    Clientdata[10].name=document.getElementsByClassName('name')[10].value;
-   Clientdata[10].starttime=document.getElementsByClassName('start')[10].value;
-   Clientdata[10].endtime=document.getElementsByClassName('end')[10].value;
-   socket.emit('datachange',Clientdata[10].name,Clientdata[10].starttime,Clientdata[10].endtime,10);
-}
-
-
-
-
-
-
-
-//function submit(e, elem)
-{
-    //Clientdata[0].starttime=elem.value;
-    //Clientdata[0].endtime=elem.value;
-    //socket.emit('datachange',Clientdata);
-
-}  
-     
-socket.on('data', function(msg,msg1){
-  for(var i=0; i<11; i++)
-  {
-    Clientdata[i]=msg[i];
-    document.getElementById('load').innerHTML=document.lastModified;
-    Clientled[i]=msg1[i];
-    // Clientdata[i].starttime=msg[i].starttime;
-    // Clientdata[i].endtime=msg[i].endtime;
-    // Clientdata[i].status=msg[i].status;
-    // Clientdata[i].batteyVoltage=msg[i].batteyVoltage;
-  }
- // console.log(Clientdata);
-   updateScreen();
-});
-   
-function updateScreen()
-{
-    for(var i=0;i<11;i++)
-    {
-        document.getElementsByClassName("name")[i].value=Clientdata[i].name;
-        document.getElementsByClassName("start")[i].value=Clientdata[i].starttime;
-        document.getElementsByClassName("end")[i].value=Clientdata[i].endtime;
-        document.getElementsByClassName("volts")[i].value=Clientdata[i].batteyVoltage;
-        document.getElementsByClassName("status")[i].value=Clientdata[i].status;
-        if(Clientled[i]==true)
-        {
-            document.getElementsByClassName("dot")[i].style.background = "rgb(102, 252, 3)";
+            }
+            alert("Success Save : To All Device ");
+            socket.emit('datafullchange', Clientdata);
         }
-        else if(Clientled[i]==false)
-        {
-            document.getElementsByClassName("dot")[i].style.background = "white";
+
+        var s0 = document.getElementById('sub0');
+        s0.onclick = function (e) {
+            Clientdata[0].name = document.getElementsByClassName('name')[0].value;
+            Clientdata[0].starttime = document.getElementsByClassName('start')[0].value;
+            Clientdata[0].endtime = document.getElementsByClassName('end')[0].value;
+            alert("success save : " + document.getElementsByClassName('name')[0].value);
+            socket.emit('datachange', Clientdata[0].name, Clientdata[0].starttime, Clientdata[0].endtime, 0);
+        }
+
+        var s1 = document.getElementById('sub1');
+        s1.onclick = function (e) {
+
+
+            Clientdata[1].name = document.getElementsByClassName('name')[1].value;
+            Clientdata[1].starttime = document.getElementsByClassName('start')[1].value;
+            Clientdata[1].endtime = document.getElementsByClassName('end')[1].value;
+            alert("success save : " + document.getElementsByClassName('name')[1].value);
+            socket.emit('datachange', Clientdata[1].name, Clientdata[1].starttime, Clientdata[1].endtime, 1);
+
+
 
         }
 
-        
-       
-    }
-}
-   
- 
+        var s2 = document.getElementById('sub2');
+        s2.onclick = function (e) {
+            Clientdata[2].name = document.getElementsByClassName('name')[2].value;
+            Clientdata[2].starttime = document.getElementsByClassName('start')[2].value;
+            Clientdata[2].endtime = document.getElementsByClassName('end')[2].value;
+            alert("success save : " + document.getElementsByClassName('name')[2].value);
+            socket.emit('datachange', Clientdata[2].name, Clientdata[2].starttime, Clientdata[2].endtime, 2);
+        }
+
+        var s3 = document.getElementById('sub3');
+        s3.onclick = function (e) {
+            Clientdata[3].name = document.getElementsByClassName('name')[3].value;
+            Clientdata[3].starttime = document.getElementsByClassName('start')[3].value;
+            Clientdata[3].endtime = document.getElementsByClassName('end')[3].value;
+            alert("success save : " + document.getElementsByClassName('name')[3].value);
+            socket.emit('datachange', Clientdata[3].name, Clientdata[3].starttime, Clientdata[3].endtime, 3);
+        }
+
+        var s4 = document.getElementById('sub4');
+        s4.onclick = function (e) {
+            Clientdata[4].name = document.getElementsByClassName('name')[4].value;
+            Clientdata[4].starttime = document.getElementsByClassName('start')[4].value;
+            Clientdata[4].endtime = document.getElementsByClassName('end')[4].value;
+            alert("success save : " + document.getElementsByClassName('name')[4].value);
+            socket.emit('datachange', Clientdata[4].name, Clientdata[4].starttime, Clientdata[4].endtime, 4);
+        }
 
 
-</script>
+
+        var s5 = document.getElementById('sub5');
+        s5.onclick = function (e) {
+            Clientdata[5].name = document.getElementsByClassName('name')[5].value;
+            Clientdata[5].starttime = document.getElementsByClassName('start')[5].value;
+            Clientdata[5].endtime = document.getElementsByClassName('end')[5].value;
+            alert("success save : " + document.getElementsByClassName('name')[5].value);
+            socket.emit('datachange', Clientdata[5].name, Clientdata[5].starttime, Clientdata[5].endtime, 5);
+        }
+
+
+        var s6 = document.getElementById('sub6');
+        s6.onclick = function (e) {
+            Clientdata[6].name = document.getElementsByClassName('name')[6].value;
+            Clientdata[6].starttime = document.getElementsByClassName('start')[6].value;
+            Clientdata[6].endtime = document.getElementsByClassName('end')[6].value;
+            alert("success save : " + document.getElementsByClassName('name')[6].value);
+            socket.emit('datachange', Clientdata[6].name, Clientdata[6].starttime, Clientdata[6].endtime, 6);
+        }
+
+        var s7 = document.getElementById('sub7');
+        s7.onclick = function (e) {
+            Clientdata[7].name = document.getElementsByClassName('name')[7].value;
+            Clientdata[7].starttime = document.getElementsByClassName('start')[7].value;
+            Clientdata[7].endtime = document.getElementsByClassName('end')[7].value;
+            alert("success save : " + document.getElementsByClassName('name')[7].value);
+            socket.emit('datachange', Clientdata[7].name, Clientdata[7].starttime, Clientdata[7].endtime, 7);
+        }
+
+        var s8 = document.getElementById('sub8');
+        s8.onclick = function (e) {
+            Clientdata[8].name = document.getElementsByClassName('name')[8].value;
+            Clientdata[8].starttime = document.getElementsByClassName('start')[8].value;
+            Clientdata[8].endtime = document.getElementsByClassName('end')[8].value;
+            alert("success save : " + document.getElementsByClassName('name')[8].value);
+            socket.emit('datachange', Clientdata[8].name, Clientdata[8].starttime, Clientdata[8].endtime, 8);
+        }
+
+        var s9 = document.getElementById('sub9');
+        s9.onclick = function (e) {
+            Clientdata[9].name = document.getElementsByClassName('name')[9].value;
+            Clientdata[9].starttime = document.getElementsByClassName('start')[9].value;
+            Clientdata[9].endtime = document.getElementsByClassName('end')[9].value;
+            alert("success save : " + document.getElementsByClassName('name')[9].value);
+            socket.emit('datachange', Clientdata[9].name, Clientdata[9].starttime, Clientdata[9].endtime, 9);
+        }
+
+
+        var s10 = document.getElementById('sub10');
+        s10.onclick = function (e) {
+            Clientdata[10].name = document.getElementsByClassName('name')[10].value;
+            Clientdata[10].starttime = document.getElementsByClassName('start')[10].value;
+            Clientdata[10].endtime = document.getElementsByClassName('end')[10].value;
+            alert("success save : " + document.getElementsByClassName('name')[10].value);
+            socket.emit('datachange', Clientdata[10].name, Clientdata[10].starttime, Clientdata[10].endtime, 10);
+        }
+
+
+
+        //phone view
+        var ps0 = document.getElementById('phone-sub0');
+        ps0.onclick = function (e) {
+            Clientdata[0].name = document.getElementsByClassName('phone-name')[0].value;
+            Clientdata[0].starttime = document.getElementsByClassName('phone-start')[0].value;
+            Clientdata[0].endtime = document.getElementsByClassName('phone-end')[0].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[0].value);
+            socket.emit('datachange', Clientdata[0].name, Clientdata[0].starttime, Clientdata[0].endtime, 0);
+        }
+
+        var ps1 = document.getElementById('phone-sub1');
+        ps1.onclick = function (e) {
+
+
+            Clientdata[1].name = document.getElementsByClassName('phone-name')[1].value;
+            Clientdata[1].starttime = document.getElementsByClassName('phone-start')[1].value;
+            Clientdata[1].endtime = document.getElementsByClassName('phone-end')[1].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[1].value);
+            socket.emit('datachange', Clientdata[1].name, Clientdata[1].starttime, Clientdata[1].endtime, 1);
+
+
+
+        }
+
+        var ps2 = document.getElementById('phone-sub2');
+        ps2.onclick = function (e) {
+            Clientdata[2].name = document.getElementsByClassName('phone-name')[2].value;
+            Clientdata[2].starttime = document.getElementsByClassName('phone-start')[2].value;
+            Clientdata[2].endtime = document.getElementsByClassName('phone-end')[2].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[2].value);
+            socket.emit('datachange', Clientdata[2].name, Clientdata[2].starttime, Clientdata[2].endtime, 2);
+        }
+
+        var ps3 = document.getElementById('phone-sub3');
+        ps3.onclick = function (e) {
+            Clientdata[3].name = document.getElementsByClassName('phone-name')[3].value;
+            Clientdata[3].starttime = document.getElementsByClassName('phone-start')[3].value;
+            Clientdata[3].endtime = document.getElementsByClassName('phone-end')[3].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[3].value);
+            socket.emit('datachange', Clientdata[3].name, Clientdata[3].starttime, Clientdata[3].endtime, 3);
+        }
+
+        var ps4 = document.getElementById('phone-sub4');
+        ps4.onclick = function (e) {
+            Clientdata[4].name = document.getElementsByClassName('phone-name')[4].value;
+            Clientdata[4].starttime = document.getElementsByClassName('phone-start')[4].value;
+            Clientdata[4].endtime = document.getElementsByClassName('phone-end')[4].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[4].value);
+            socket.emit('datachange', Clientdata[4].name, Clientdata[4].starttime, Clientdata[4].endtime, 4);
+        }
+
+
+
+        var ps5 = document.getElementById('phone-sub5');
+        ps5.onclick = function (e) {
+            Clientdata[5].name = document.getElementsByClassName('phone-name')[5].value;
+            Clientdata[5].starttime = document.getElementsByClassName('phone-start')[5].value;
+            Clientdata[5].endtime = document.getElementsByClassName('phone-end')[5].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[5].value);
+            socket.emit('datachange', Clientdata[5].name, Clientdata[5].starttime, Clientdata[5].endtime, 5);
+        }
+
+
+        var ps6 = document.getElementById('phone-sub6');
+        ps6.onclick = function (e) {
+            Clientdata[6].name = document.getElementsByClassName('phone-name')[6].value;
+            Clientdata[6].starttime = document.getElementsByClassName('phone-start')[6].value;
+            Clientdata[6].endtime = document.getElementsByClassName('phone-end')[6].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[6].value);
+            socket.emit('datachange', Clientdata[6].name, Clientdata[6].starttime, Clientdata[6].endtime, 6);
+        }
+
+        var ps7 = document.getElementById('sub7');
+        ps7.onclick = function (e) {
+            Clientdata[7].name = document.getElementsByClassName('phone-name')[7].value;
+            Clientdata[7].starttime = document.getElementsByClassName('phone-start')[7].value;
+            Clientdata[7].endtime = document.getElementsByClassName('phone-end')[7].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[7].value);
+            socket.emit('datachange', Clientdata[7].name, Clientdata[7].starttime, Clientdata[7].endtime, 7);
+        }
+
+        var ps8 = document.getElementById('sub8');
+        ps8.onclick = function (e) {
+            Clientdata[8].name = document.getElementsByClassName('phone-name')[8].value;
+            Clientdata[8].starttime = document.getElementsByClassName('phone-start')[8].value;
+            Clientdata[8].endtime = document.getElementsByClassName('phone-end')[8].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[8].value);
+            socket.emit('datachange', Clientdata[8].name, Clientdata[8].starttime, Clientdata[8].endtime, 8);
+        }
+
+        var ps9 = document.getElementById('phone-sub9');
+        ps9.onclick = function (e) {
+            Clientdata[9].name = document.getElementsByClassName('phone-name')[9].value;
+            Clientdata[9].starttime = document.getElementsByClassName('phone-start')[9].value;
+            Clientdata[9].endtime = document.getElementsByClassName('phone-end')[9].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[9].value);
+            socket.emit('datachange', Clientdata[9].name, Clientdata[9].starttime, Clientdata[9].endtime, 9);
+        }
+
+
+        var ps10 = document.getElementById('phone-sub10');
+        ps10.onclick = function (e) {
+            Clientdata[10].name = document.getElementsByClassName('phone-name')[10].value;
+            Clientdata[10].starttime = document.getElementsByClassName('phone-start')[10].value;
+            Clientdata[10].endtime = document.getElementsByClassName('phone-end')[10].value;
+            alert("success save : " + document.getElementsByClassName('phone-name')[10].value);
+            socket.emit('datachange', Clientdata[10].name, Clientdata[10].starttime, Clientdata[10].endtime, 10);
+        } 
+
+
+
+
+
+
+
+        //function submit(e, elem)
+        {
+            //Clientdata[0].starttime=elem.value;
+            //Clientdata[0].endtime=elem.value;
+            //socket.emit('datachange',Clientdata);
+
+        }
+
+        socket.on('data', function (msg, msg1) {
+            for (var i = 0; i < 11; i++) {
+                Clientdata[i] = msg[i];
+                document.getElementById('load').innerHTML = document.lastModified;
+                document.getElementById('phone-load').innerHTML = document.lastModified;
+                Clientled[i] = msg1[i];
+                // Clientdata[i].starttime=msg[i].starttime;
+                // Clientdata[i].endtime=msg[i].endtime;
+                // Clientdata[i].status=msg[i].status;
+                // Clientdata[i].batteyVoltage=msg[i].batteyVoltage;
+            }
+            // console.log(Clientdata);
+            updateScreen();
+        });
+
+        function updateScreen() {
+            for (var i = 0; i < 11; i++) {
+                document.getElementsByClassName("name")[i].value = Clientdata[i].name;
+                document.getElementsByClassName("start")[i].value = Clientdata[i].starttime;
+                document.getElementsByClassName("end")[i].value = Clientdata[i].endtime;
+                document.getElementsByClassName("volts")[i].value = Clientdata[i].batteyVoltage;
+                document.getElementsByClassName("status")[i].value = Clientdata[i].status;
+
+
+                //phone-view
+                document.getElementsByClassName("phone-name")[i].value = Clientdata[i].name;
+                document.getElementsByClassName("phone-start")[i].value = Clientdata[i].starttime;
+                document.getElementsByClassName("phone-end")[i].value = Clientdata[i].endtime;
+                document.getElementsByClassName("phone-volts")[i].value = Clientdata[i].batteyVoltage;
+                document.getElementsByClassName("phone-status")[i].value = Clientdata[i].status;
+
+
+
+
+
+
+                if (Clientled[i] == true) {
+                    document.getElementsByClassName("dot")[i].style.background = "rgb(102, 252, 3)";
+                    document.getElementsByClassName("phone-dot")[i].style.background = "rgb(102, 252, 3)";
+                }
+                else if (Clientled[i] == false) {
+                    document.getElementsByClassName("dot")[i].style.background = "white";
+                    document.getElementsByClassName("phone-dot")[i].style.background = "white";
+
+                }
+
+
+
+            }
+        }
+
+
+
+
+    </script>
 
 </body>
 
