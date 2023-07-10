@@ -141,3 +141,13 @@ input::-webkit-inner-spin-button {
 {
    padding: 1px ;
 }
+.odd
+{
+    background-color:#cbe8d0 ;
+
+}
+.even
+{
+    background-color:#cfe2ff;
+
+}
